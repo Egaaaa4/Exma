@@ -1,0 +1,353 @@
+@mixin text_design($s,$m){
+    font-size: $s;
+    margin-bottom: $m;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 125%;
+}
+body{
+    transition: 0.3s;
+    font-family: sans-serif;
+    line-height: 125%;
+
+}
+.first{
+    background-color: #74C69D;
+}
+li{
+    
+    list-style: none;
+    padding: 0 15px ;
+}
+a{
+    color: #FFFF;
+    text-decoration: none;
+}
+nav, nav ul{
+    display: flex;
+    align-items: center;
+}
+nav{
+    top:  0; left: 0; right: 0;
+    padding:1% 5% 1%;
+    background-color: #74C69D;
+    position: fixed;
+    line-height: 125%;
+    justify-content: space-between;
+}
+.container{
+    padding:0 8%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.header_sec{
+    padding-top: clamp(3.438rem, 4.514rem + 3.692vw, 5.438rem);
+    text-align: center;
+    max-width: clamp(22.188rem, 21.539rem + 3.457vw, 25.688rem);
+    margin: 0 auto clamp(2.813rem, 1.478rem + 3.558vw, 5.125rem);
+
+    h2{
+        letter-spacing: 5px;
+        padding-top: clamp(1.375rem, 0.935rem + 2.346vw, 3.75rem);
+        color: #74C69D;
+        font-size: 16px;
+        margin-bottom: 16px;
+        @include text_design(16px,16px)
+        
+    }
+    h1{
+        font-family: Georgia;
+
+        font-size: clamp(1.5rem, 1.315rem + 0.988vw, 2.5rem);
+        @include text_design(clamp(1.5rem, 1.315rem + 0.988vw, 2.5rem),16px )
+    }
+    p{  
+        font-size: clamp(0.938rem, 0.88rem + 0.309vw, 1.25rem);
+        @include text_design(clamp(0.938rem, 0.88rem + 0.309vw, 1.25rem),clamp(2.813rem, 1.478rem + 3.558vw, 5.125rem))
+    }
+}
+
+//main
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    img{
+        width: 100%;
+    }
+}
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.button{
+    margin: clamp(1.75rem, 0.452rem + 3.462vw, 4rem) 0 clamp(1.875rem, -0.613rem + 6.635vw, 6.188rem) ;
+    .btn{
+        display: inline-block;
+        padding: 12px 48px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #000000;
+        transition: 0.3s;
+    }
+}
+
+.btn:hover{
+    background-color: rgb(27, 27, 27);
+    text-decoration: underline;
+}
+@media (width <= 800px){
+    main{
+        grid-template-columns: unset;
+    }
+}
+// footer
+footer{
+    font-size: 20px;
+    
+    .social, p{
+        align-items: center;
+    justify-content: center;
+        display: flex;
+        gap: 20px;
+    }
+    justify-content: space-between;
+    display: flex;
+    color: #fff;
+    padding: clamp(1.938rem, 1.089rem + 2.262vw, 3.125rem) clamp(1.438rem, -3.384rem + 12.857vw, 8.188rem);
+    background-color: #74C69D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$color-black: #000000;
+$color-l-black: #212529;
+$color-azure: #74C69D;
+$color-white: #FFFFFF;
+$special-font: "Crimson Text", serif;
+
+// burger menu
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    color: $color-white;
+    padding: 1vw 4vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    align-items: center;
+    background: $color-azure;
+
+    
+
+    .logo {
+        display: flex;
+        gap: 1vw;
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        font-size: clamp(25px, 5vw, 40px);
+        // font-size: 40px;
+        font-weight: 500;
+    }
+
+    a {
+        text-transform: capitalize;
+        color: $color-black;
+        font-size: 15px;
+        transition: .2s;
+        color: #ffffff;
+
+        @media (width >= 2000px) {
+            font-size: 1vw;
+        }
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: #f2f2f2;
+    }
+
+
+
+
+    .active {
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+    .active:hover {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .menu {
+        display: flex;
+        gap: 4vw;
+        align-items: center;
+        transition: .5s;
+
+        @media (width >= 1000px) {
+            gap: 40px;
+        }
+    }
+
+    .burger {
+        display: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .b-line {
+        position: absolute;
+        height: 2px;
+        background: $color-white;
+        border-radius: 50px;
+        right: 0;
+        left: 0;
+        transition: .5s;
+    }
+
+    .bl1 {
+        top: 0;
+    }
+
+    .bl2 {
+        left: 5px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .bl3 {
+        bottom: 0;
+    }
+
+    @media (width <= 650px) {
+        .image {
+            width: 80%;
+        }
+
+        .burger {
+            display: flex;
+        }
+
+        .menu { 
+            position: absolute;
+            flex-direction: column;
+            align-items: start;
+            overflow: hidden;
+            padding: 0 10%;
+            top: 100%;
+            bottom: 0;
+            right: -9%;
+            left: -10%;
+            z-index: 50;
+            background: $color-azure;
+            padding: 0 20vw;
+        }
+    }
+
+    .active-burger {
+        .b-line {
+            box-shadow: 0 0 1px 0px $color-white ;
+        }
+
+        .bl1 {
+            transform: rotate(-45deg) translate(0, -50%);
+            top: 50%;
+        }
+
+        .bl2 {
+            left: 100%;
+        }
+
+        .bl3 {
+            transform: rotate(45deg) translate(0, 50%);
+            bottom: 50%;
+        }
+    }
+
+    .open-navbar {
+        gap: 1vw;
+        top: 99%;
+        bottom: -190%;
+    }
+
+    
+
+    @media (width <= 450px) {
+        .open-navbar {
+            padding-top: 5px;
+        }
+    }
+    
+    @media (width <= 360px) {
+        .burger {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+@media (width <= 600px) {
+    a {
+        font-size: 15px;
+    }
+    .open-navbar {
+        padding-top: 5px;
+        gap: 1.2vw;
+    }
+    footer{
+        display: block;
+        .social{
+            margin-bottom: 20px;
+        }
+    }
+}
